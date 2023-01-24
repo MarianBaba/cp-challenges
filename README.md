@@ -1,4 +1,4 @@
-# Competitive Programming Challenges implemented in Java!
+# Competitive Programming Challenges!
 
 This is a collection of Java implemented solutions for the Codeforces' problemset. (You can find the link on the right side of the page)
 
