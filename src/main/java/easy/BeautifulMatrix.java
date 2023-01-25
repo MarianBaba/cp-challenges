@@ -2,9 +2,6 @@ package easy;
 
 import readers.FastReader;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class BeautifulMatrix {
     public static void main(String[] args) throws Exception {
         FastReader fr = new FastReader();
