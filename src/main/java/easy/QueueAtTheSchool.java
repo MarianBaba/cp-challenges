@@ -13,7 +13,7 @@ public class QueueAtTheSchool {
         char[] children = fr.readLine().toCharArray();
 
         for (int j = 0; j < t; j++) {
-            for (int i = 0; i < children.length - 1; i++) {
+            for (int i = 0; i < n - 1; i++) {
                 if (children[i] == 'B' && children[i + 1] == 'G') {
                     children[i] = 'G';
                     children[i + 1] = 'B';
@@ -22,8 +22,8 @@ public class QueueAtTheSchool {
             }
         }
 
-        for (int k = 0; k < children.length; k++) {
-            System.out.print(children[k]);
+        for (char c : children) {
+            System.out.print(c);
         }
     }
 }
