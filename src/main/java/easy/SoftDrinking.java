@@ -19,6 +19,7 @@ public class SoftDrinking {
         int cd = c * d;
         int pnp = p / np;
 
+        /*
         int min = klnl;
         if (cd < min) {
             min = cd;
@@ -26,6 +27,10 @@ public class SoftDrinking {
         if (pnp < min) {
             min = pnp;
         }
+        */
+
+        int min = (klnl < cd) ? ((klnl < pnp) ? klnl : (cd < pnp ? cd : pnp)) : (cd < pnp ? cd : pnp);
+
         System.out.println(min/n);
     }
 }
