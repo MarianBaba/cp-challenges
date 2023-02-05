@@ -1,4 +1,4 @@
-// package easy;
+package easy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ public class Reconnaissance2 {
     public static void main(String... args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        List<Node> soldiers = new ArrayList<>();
 
+        List<Node> soldiers = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             soldiers.add(new Node(scan.nextInt(), i + 1));
         }
