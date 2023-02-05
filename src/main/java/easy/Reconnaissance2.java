@@ -1,13 +1,45 @@
-package easy;
+// package easy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Reconnaissance2 {
     public static void main(String... args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
+        List<Node> soldiers = new ArrayList<>();
 
-        int[] soldiers = new int[n];
+        for (int i = 0; i < n; i++) {
+            soldiers.add(new Node(scan.nextInt(), i + 1));
+        }
+
+        for (int i = 0; i < n; i++) {
+            Node s = soldiers.get(i);
+            if (i == 0) {
+                s.setPrevious(soldiers.get(n - 1));
+                s.setNext(soldiers.get(i + 1));
+            } else if (i == (n - 1)) {
+                s.setNext(soldiers.get(0));
+                s.setPrevious(soldiers.get(i - 1));
+            } else {
+                s.setNext(soldiers.get(i + 1));
+                s.setPrevious(soldiers.get(i - 1));
+            }
+        }
+
+        int min = Integer.MAX_VALUE;
+        Node candidate = soldiers.get(0);
+        for (int i = 0; i < n; i++) {
+            if (Math.abs(soldiers.get(i).height - soldiers.get(i).next.height) < min) {
+                min = Math.abs(soldiers.get(i).height - soldiers.get(i).next.height);
+                candidate = soldiers.get(i);
+            }
+        }
+
+        System.out.println(candidate.index + " " + candidate.next.index);
+
+        /* int[] soldiers = new int[n];
 
         for (int i = 0; i < n; i++) {
             soldiers[i] = scan.nextInt();
@@ -55,5 +87,26 @@ public class Reconnaissance2 {
             }
         }
         System.out.println(x + " " + j);
+         */
+    }
+}
+
+class Node {
+    Node next;
+    Node previous;
+    int height;
+    int index;
+
+    public Node(int height, int index) {
+        this.height = height;
+        this.index = index;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
+    }
+
+    public void setPrevious(Node previous) {
+        this.previous = previous;
     }
 }
