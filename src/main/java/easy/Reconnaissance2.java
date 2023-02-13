@@ -17,14 +17,11 @@ public class Reconnaissance2 {
         for (int i = 0; i < n; i++) {
             Node s = soldiers.get(i);
             if (i == 0) {
-                s.setPrevious(soldiers.get(n - 1));
                 s.setNext(soldiers.get(i + 1));
             } else if (i == (n - 1)) {
                 s.setNext(soldiers.get(0));
-                s.setPrevious(soldiers.get(i - 1));
             } else {
                 s.setNext(soldiers.get(i + 1));
-                s.setPrevious(soldiers.get(i - 1));
             }
         }
 
@@ -104,9 +101,5 @@ class Node {
 
     public void setNext(Node next) {
         this.next = next;
-    }
-
-    public void setPrevious(Node previous) {
-        this.previous = previous;
     }
 }
