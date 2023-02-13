@@ -90,7 +90,6 @@ public class Reconnaissance2 {
 
 class Node {
     Node next;
-    Node previous;
     int height;
     int index;
 
